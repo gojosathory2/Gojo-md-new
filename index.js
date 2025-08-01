@@ -16,15 +16,21 @@ const {
     generateWAMessageFromContent,
     prepareWAMessageMedia,
     proto
-} = require('@whiskeysockets/baileys')
+} = require('baileys-x')
 const fs = require('fs')
 const P = require('pino')
 const FileType = require('file-type')
 const moment = require('moment-timezone')
 const l = console.log
 var config = require('./settings')
+// Other requires and bot setup lines (if any)
+
+// Call start.js
+
 const qrcode = require('qrcode-terminal')
 const NodeCache = require('node-cache')
+const { spawn } = require('child_process');
+spawn('python3', ['lib/telegram_file_api.py'], { stdio: 'inherit' });
 const util = require('util')
 const mongoose = require('mongoose'); 
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
